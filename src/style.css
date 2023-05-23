@@ -21,7 +21,7 @@ ul {
 }
 
 i {
-width: auto;
+  width: auto;
 }
 
 li {
@@ -50,8 +50,8 @@ li {
 }
 
 .description {
-display: flex;
-gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .description p {
