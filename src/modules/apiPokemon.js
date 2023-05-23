@@ -1,4 +1,4 @@
-const getPokemones = () => {
+const getPokemon = () => {
   const url = 'https://pokeapi.co/api/v2/pokemon/';
 
   const config = {
@@ -24,7 +24,7 @@ const getPokemones = () => {
           resources.push(pokemon);
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
         }),
     );
   }
@@ -34,9 +34,9 @@ const getPokemones = () => {
       // console.log(resources);
     })
     .catch((error) => {
-      console.log(error);
+      // console.log(error);
     });
   return resources;
 };
 
-export default getPokemones;
+export default getPokemon;
