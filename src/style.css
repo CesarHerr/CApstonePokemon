@@ -1,0 +1,25 @@
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.logo {
+  width: 5rem;
+  height: auto;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+li {
+  list-style: none;
+  padding: 0.5rem;
+}
