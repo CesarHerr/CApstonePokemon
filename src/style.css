@@ -23,3 +23,31 @@ li {
   list-style: none;
   padding: 0.5rem;
 }
+
+.popup-container {
+  width: 50%;
+  position: absolute; 
+  background-color: rgba(220, 98, 98, 0.903); 
+  text-align: center;
+}
+
+.popup-container h2 {
+  text-align: center;
+}
+
+.popup-container img {
+  width: auto;
+  max-width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.popup-container input, .popup-container textarea {
+  width: 50%;
+}
+
+.popup-container span {
+  position: absolute;
+  right: 0;
+  font-size: 4rem;
+}
