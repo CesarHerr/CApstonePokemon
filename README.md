@@ -1,6 +1,6 @@
-# Webpack
+# Pokemon
 
-Welcome to my Webpack project
+Welcome to my Pokemon project
 
 <a name="readme-top"></a>
 
@@ -23,9 +23,9 @@ Welcome to my Webpack project
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Webpack! <a name="about-project"></a>
+# 📖 Pokemon! <a name="about-project"></a>
 
-**Webpack!** This project teache me how to setup webpack.
+**Pokemon!** This project is a little pokedex to get info about the pokemon universe.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -42,7 +42,7 @@ Welcome to my Webpack project
 
 ### Key Features <a name="key-features"></a>
 
-- **A project to learn how to use webpack**
+- **This site will give you info about pokemons**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -60,7 +60,7 @@ Welcome to my Webpack project
   https://git-scm.com/downloads and install it).
 - Step 2: Once you have installed git you can clone this project using the command below:
   ```
-  git clone https://github.com/Jrmcuervo/webpack.git
+  git clone https://github.com/Jrmcuervo/js-group-capstone.git
   ```
 - Step 3: Once you have cloned this repo navigate to the folder that contains
   the repository.
@@ -78,6 +78,18 @@ Welcome to my Webpack project
 - GitHub: [@Jrmcuervom](https://github.com/Jrcuervom)
 - Twitter: [@Jrmcuervom](https://twitter.com/Jrcuervom)
 - LinkedIn: [Jrmcuervom](https://www.linkedin.com/in/Jrcuervom/)
+
+👤 **Cesar Herrera**
+
+- GitHub: [@Cesarherr](https://github.com/Cesarherr)
+- Twitter: [@Cesarherr2](https://twitter.com/Cesarherr2)
+- LinkedIn: [Cesarherr](https://www.linkedin.com/in/Cesarherr/)
+
+👤 **Jose RM**
+
+- GitHub: [@Joramot](https://github.com/joramot)
+- Twitter: [@El_rulis](https://twitter.com/el_rulis)
+- LinkedIn: [jose-RM](https://linkedin.com/in/jose-RM)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
