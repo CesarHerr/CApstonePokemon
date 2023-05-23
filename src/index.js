@@ -1,2 +1,2 @@
 import './style.css';
-import { btnComments, btnReservations } from './index.mjs';
+import { btnComments, btnReservations } from './home.js';
