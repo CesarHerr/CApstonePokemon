@@ -34,6 +34,19 @@
 
 // export default createHome;
 
+const urlAPI = "https://pokeapi.co/api/v2/pokemon";
+
+const createHome = async () => {
+  try {
+    const response = await fetch(`${urlAPI}`);
+    const data = await response.json();
+    console.log(data.results)
+    
+    displayScores(data.results)
+  } catch (error) {
+    alert("Errooooooor");
+  }
+};
 
 const main = document.querySelector('header');
 const list = document.createElement('div');
