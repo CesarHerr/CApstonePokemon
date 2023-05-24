@@ -57,10 +57,11 @@ const displayScores = (data) => {
     list.innerHTML = data
       .map(
         (data, index) => `
-        <div>
+        <div class="container">
           <h2>${data.name}</h2>
           <img class ="indexPokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${index + 1}.svg"></img>
           <button class="seePokemon" data-index=${index + 1}>comments</button>
+          <button id="btnReservations">Reservations</button>
         </diV>
       `,
       )
