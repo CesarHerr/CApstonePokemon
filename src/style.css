@@ -29,6 +29,58 @@ li {
   padding: 0.5rem;
 }
 
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 500px;
+  border: 2px solid black;
+  border-radius: 5%;
+  background-color: rgb(202, 196, 196);
+  position: absolute;
+}
+
+.pokemon-card__image {
+  display: flex;
+  flex-direction: row;
+  max-width: 250px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.pokemon-card__title,
+.pokemon-card__section-title {
+  margin: 0 auto;
+}
+
+.columns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.column {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon-card__input {
+  max-width: 120px;
+  margin-bottom: 10px;
+}
+
+.pokemon-card__button {
+  max-width: 120px;
+}
+
 .popup-container {
   width: 50%;
   position: absolute;
