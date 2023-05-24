@@ -50,13 +50,12 @@ const createHome = async () => {
 
 const main = document.querySelector('header');
 const list = document.createElement('div');
-list.classList.add('pokeGroup');
+list.classList.add('pokeGroup container');
 main.insertAdjacentElement('afterEnd', list)
 
 const displayScores = (data) => {
   list.innerHTML = data.map(
     (data, index) => `
-      <div class="container">
         <div class="grid-item">
         <div><img class="indexPokemon size" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${index + 1}.svg"></img></div>
           <div class="description">
@@ -72,7 +71,6 @@ const displayScores = (data) => {
           <button class="seePokemon" data-index=${index + 1}>comments</button>
           <button id="btnReservations">Reservations</button>
         </div>
-      </diV>
       `,
       )
       .join('');
