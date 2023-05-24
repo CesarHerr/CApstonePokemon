@@ -8,4 +8,5 @@ document.addEventListener('DOMContentLoaded', async () => {
   array = await getPokemon();
   createHome(array);
 });
+
 getPokemon();
