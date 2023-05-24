@@ -33,6 +33,11 @@ li {
   display: flex;
   flex-wrap: wrap;
   position: relative;
+  gap: 2rem;
+  margin: 2rem;
+  padding: 2rem;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /* images styles */
@@ -41,11 +46,8 @@ li {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: auto;
   padding: 1rem;
   gap: 1rem;
-  background-color: blue;
 }
 
 .size {
