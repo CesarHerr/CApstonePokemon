@@ -43,7 +43,12 @@ li {
 }
 
 .popup-container input, .popup-container textarea {
-  width: 50%;
+  width: 100%;
+}
+
+.popup-container form {
+  margin: 0 auto;
+  width: 50%; 
 }
 
 .popup-container span {
