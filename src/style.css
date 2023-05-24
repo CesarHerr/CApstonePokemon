@@ -1,22 +1,27 @@
 * {
   font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
 }
 
 header {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .logo {
-  width: 5rem;
-  height: auto;
+  width: 10%;
 }
 
 ul {
   display: flex;
   flex-direction: row;
   gap: 2rem;
+}
+
+i {
+  width: auto;
 }
 
 li {
@@ -74,4 +79,93 @@ li {
 
 .pokemon-card__button {
   max-width: 120px;
+}
+
+.popup-container {
+  width: 50%;
+  position: absolute;
+  background-color: rgba(220, 98, 98, 0.903);
+  text-align: center;
+  z-index: 1000;
+}
+
+.popup-container h2 {
+  text-align: center;
+}
+
+.popup-container img {
+  width: auto;
+  max-width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.popup-container input,
+.popup-container textarea {
+  width: 100%;
+}
+
+.popup-container form {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.popup-container span {
+  position: absolute;
+  right: 0;
+  font-size: 4rem;
+}
+
+.pokeGroup {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  gap: 2rem;
+  margin: 2rem;
+  padding: 2rem;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* images styles */
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.size {
+  width: 100px;
+}
+
+.description {
+  display: flex;
+  gap: 1rem;
+}
+
+.description p {
+  font-size: 0.8rem;
+  margin-top: 0;
+}
+
+.likes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.count-likes {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Media query para pantallas de hasta 754px */
+@media (max-width: 754px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
