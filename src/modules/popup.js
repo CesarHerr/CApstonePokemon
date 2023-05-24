@@ -67,4 +67,51 @@ const getPokeInfo = () => {
   });
 };
 
+
+//Working on Involvement API
+const id = 'BZDVsIE83KOtqyh07flb'
+
+//post comment
+const addComment = async (id, username, comment ) => {
+  try {
+    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/qpwoieqnak4544154/comments`, {
+      method: 'POST',
+      body: JSON.stringify({
+        item_id: id,
+        username: username,
+        comment: comment,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+
+    const data = await response.json();
+    
+    return data;
+    }
+  
+  catch (error) {
+    throw new Error('Game not found!');
+  }
+};
+
+
+// Get users comments
+const userComments = async (id) => {
+  try {
+    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/qpwoieqnak4544154/comments?item_id=${id}`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error('Not Found!!!.');
+  }
+};
+
+
+
+
+
+
+
 export default getPokeInfo;
