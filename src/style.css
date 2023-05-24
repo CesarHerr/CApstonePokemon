@@ -29,6 +29,7 @@ li {
   position: absolute; 
   background-color: rgba(220, 98, 98, 0.903); 
   text-align: center;
+  z-index: 1000;
 }
 
 .popup-container h2 {
@@ -55,4 +56,15 @@ li {
   position: absolute;
   right: 0;
   font-size: 4rem;
+}
+
+.indexPokemon {
+  width: 200px;
+  height: 200px;
+}
+
+.pokeGroup {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
 }

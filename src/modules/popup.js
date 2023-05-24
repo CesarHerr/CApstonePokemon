@@ -1,22 +1,5 @@
-const btn3 = document.createElement("button");
-btn3.classList.add("seePokemon");
-btn3.dataset.index = 7;
-btn3.innerText = "poke3";
-
-const btn1 = document.createElement("button");
-btn1.classList.add("seePokemon");
-btn1.dataset.index = 2;
-btn1.innerText = "poke1";
-
-const btn2 = document.createElement("button");
-btn2.classList.add("seePokemon");
-btn2.dataset.index = 10;
-btn2.innerText = "poke2";
-
 const main = document.querySelector("header");
-main.appendChild(btn1);
-main.appendChild(btn2);
-main.appendChild(btn3);
+
 
 const urlAPI = "https://pokeapi.co/api/v2/pokemon";
 
@@ -31,8 +14,8 @@ const getPokemon = async (id) => {
       ability: data.abilities[0].ability.name[0].toUpperCase() + data.abilities[0].ability.name.substring(1),
       weight: (data.weight * 0.1).toFixed(1),
       height: (data.height * 0.1).toFixed(1),
-      type: data.types[0].type.name[0].toUpperCase() + data.types[0].type.name.substring(1)
-
+      type: data.types[0].type.name[0].toUpperCase() + data.types[0].type.name.substring(1) 
+      
     };
     createPopup(pokeInfo);
   } catch (error) {
