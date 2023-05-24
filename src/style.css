@@ -35,6 +35,7 @@ li {
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   margin: 2rem;
+  background-color: red;
 }
 
 /* images styles */
@@ -47,6 +48,7 @@ li {
   height: auto;
   padding: 1rem;
   gap: 1rem;
+  background-color: blue;
 }
 
 .description {

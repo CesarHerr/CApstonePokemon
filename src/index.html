@@ -26,7 +26,7 @@
   </header>
   <main>
     <div class="grid-container">
-      <div class="grid-item">
+      <!-- <div class="grid-item">
         <div><img src="../images/bulbasaur.png" alt="Imagen 1"></div>
         <div class="description">
           <p>Name.</p>
@@ -40,8 +40,10 @@
         </div>
         <button id="btnComments" class=".seePokemon">Comments</button>
         <button id="btnReservations">Reservations</button>
-      </div>
-      <div class="grid-item">
+      </div> -->
+
+
+      <!-- <div class="grid-item">
         <div><img src="../images/bulbasaur.png" alt="Imagen 1"></div>
         <div class="description">
           <p>Name</p>
@@ -115,8 +117,27 @@
         </div>
         <button>Comments</button>
         <button>Reservations</button>
-      </div>
+      </div> -->
     </div>
+
+    <template id="template-grid-item">
+      <div class="grid-item">
+        <div><img class="img-pokemon" src="../images/bulbasaur.png" alt="Imagen 1"></div>
+        <div class="description">
+          <p class="name-pokemon">Name.</p>
+          <div class="likes">
+            <i class="fa-regular fa-heart"></i>
+            <div class="count-likes">
+              <p>n</p>
+              <p>likes</p>
+            </div>
+          </div>
+        </div>
+        <button id="btnComments" class=".seePokemon">Comments</button>
+        <button id="btnReservations">Reservations</button>
+      </div>
+    </template>
+
   </main>
   <footer>
     <p>Created by Cesar Jose and Ruben CC license</p>

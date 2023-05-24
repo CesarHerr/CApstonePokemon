@@ -11,7 +11,7 @@ const getPokemon = () => {
   const resources = [];
   const fetchPromises = [];
 
-  for (let i = 1; i <= 10; i++) {
+  for (let i = 1; i <= 10; i += 1) {
     fetchPromises.push(
       fetch(`${url}${i}`, config)
         .then((response) => response.json())
@@ -24,17 +24,16 @@ const getPokemon = () => {
           resources.push(pokemon);
         })
         .catch((error) => {
-          // console.log(error);
+          console.log('an error occured: ', error);
         }),
     );
   }
 
   Promise.all(fetchPromises)
     .then(() => {
-      // console.log(resources);
     })
     .catch((error) => {
-      // console.log(error);
+      console.log('an error occured: ', error);
     });
   return resources;
 };
