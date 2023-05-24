@@ -62,6 +62,7 @@ li {
   position: absolute;
   right: 0;
   font-size: 4rem;
+}
 
 .pokeGroup {
   display: flex;
