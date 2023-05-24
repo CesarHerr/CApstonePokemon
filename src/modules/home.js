@@ -56,7 +56,7 @@ main.insertAdjacentElement('afterEnd', list)
 const displayScores = (data) => {
   list.innerHTML = data.map(
     (data, index) => `
-        <div class="grid-item">
+      <div class="grid-item">
         <div><img class="indexPokemon size" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${index + 1}.svg"></img></div>
           <div class="description">
           <h2>${data.name}</h2>
@@ -70,7 +70,7 @@ const displayScores = (data) => {
           </div>
           <button class="seePokemon" data-index=${index + 1}>comments</button>
           <button id="btnReservations">Reservations</button>
-        </div>
+      </div>
       `,
       )
       .join('');
