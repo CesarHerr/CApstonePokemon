@@ -6,4 +6,3 @@ import createHome from './modules/home.js';
 
 getPokeInfo();
 createHome();
-
