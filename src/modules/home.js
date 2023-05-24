@@ -34,26 +34,26 @@
 
 // export default createHome;
 
-const urlAPI = "https://pokeapi.co/api/v2/pokemon";
+const urlAPI = 'https://pokeapi.co/api/v2/pokemon';
 
 const createHome = async () => {
   try {
     const response = await fetch(`${urlAPI}`);
     const data = await response.json();
-    console.log(data.results)
-    
-    displayScores(data.results)
+    console.log(data.results);
+
+    displayScores(data.results);
   } catch (error) {
-    alert("Errooooooor");
+    alert('Errooooooor');
   }
 };
 
 const main = document.querySelector('header');
 const list = document.createElement('div');
 list.classList.add('pokeGroup');
-main.insertAdjacentElement('afterEnd', list)
+main.insertAdjacentElement('afterEnd', list);
 
-const createHome = (data) => {
+const displayScores = (data) => {
   list.innerHTML = data
     .map(
       (data, index) => `
@@ -68,7 +68,6 @@ const createHome = (data) => {
 };
 
 export default createHome;
-
 
 // <template id="template-grid-item">
 //   <div class="grid-item">
