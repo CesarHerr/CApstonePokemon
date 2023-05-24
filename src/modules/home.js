@@ -58,10 +58,19 @@ const displayScores = (data) => {
       .map(
         (data, index) => `
         <div class="container">
+        <div class="grid-item">
           <h2>${data.name}</h2>
+          <div class="likes">
+            <i class="fa-regular fa-heart"></i>
+            <div class="count-likes">
+              <p>n</p>
+              <p>likes</p>
+            </div>
+          </div>
           <img class ="indexPokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${index + 1}.svg"></img>
           <button class="seePokemon" data-index=${index + 1}>comments</button>
           <button id="btnReservations">Reservations</button>
+        </div>
         </diV>
       `,
       )
