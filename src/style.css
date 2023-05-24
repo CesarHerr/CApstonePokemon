@@ -29,11 +29,10 @@ li {
   padding: 0.5rem;
 }
 
-.container {
+.pokeGroup {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 2rem;
+  flex-wrap: wrap;
+  position: relative;
 }
 
 /* images styles */

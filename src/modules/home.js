@@ -50,7 +50,7 @@ const createHome = async () => {
 
 const main = document.querySelector('header');
 const list = document.createElement('div');
-list.classList.add('pokeGroup container');
+list.classList.add('pokeGroup');
 main.insertAdjacentElement('afterEnd', list)
 
 const displayScores = (data) => {
