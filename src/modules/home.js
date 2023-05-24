@@ -54,11 +54,12 @@ list.classList.add('pokeGroup');
 main.insertAdjacentElement('afterEnd', list)
 
 const displayScores = (data) => {
-    list.innerHTML = data
-      .map(
-        (data, index) => `
-        <div class="container">
+  list.innerHTML = data.map(
+    (data, index) => `
+      <div class="container">
         <div class="grid-item">
+        <div><img class ="indexPokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${index + 1}.svg"></img></div>
+          <div class="description">
           <h2>${data.name}</h2>
           <div class="likes">
             <i class="fa-regular fa-heart"></i>
@@ -67,11 +68,11 @@ const displayScores = (data) => {
               <p>likes</p>
             </div>
           </div>
-          <img class ="indexPokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${index + 1}.svg"></img>
+          </div>
           <button class="seePokemon" data-index=${index + 1}>comments</button>
           <button id="btnReservations">Reservations</button>
         </div>
-        </diV>
+      </diV>
       `,
       )
       .join('');
