@@ -58,7 +58,7 @@ const displayScores = (data) => {
     (data, index) => `
       <div class="container">
         <div class="grid-item">
-        <div><img class ="indexPokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${index + 1}.svg"></img></div>
+        <div><img class="indexPokemon size" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${index + 1}.svg"></img></div>
           <div class="description">
           <h2>${data.name}</h2>
           <div class="likes">

@@ -29,15 +29,6 @@ li {
   padding: 0.5rem;
 }
 
-/* Grid styles */
-/* .grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin: 2rem;
-  background-color: red;
-} */
-
 .container {
   display: flex;
   flex-direction: column;
@@ -56,6 +47,10 @@ li {
   padding: 1rem;
   gap: 1rem;
   background-color: blue;
+}
+
+.size {
+  width: 100px;
 }
 
 .description {
