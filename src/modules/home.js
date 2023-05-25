@@ -36,7 +36,7 @@ const displayScores = (data) => {
           </div>
           </div>
           <button class="seePokemon" data-index=${index + 1}>comments</button>
-          <button id="btnReservations">Reservations</button>
+          <button class="reservePokemon" data-index=${index + 1}>Reservations</button>
       </div>
       `,
   )

@@ -32,13 +32,21 @@ li {
 .pokemon-card {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 50rem auto 0;
   padding: 2rem;
   max-width: 500px;
   border: 2px solid black;
   border-radius: 5%;
   background-color: rgb(202, 196, 196);
-  position: absolute;
+  position: fixed;
+  top: -750px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.close {
+  cursor: pointer;
 }
 
 .pokemon-card__image {
@@ -47,6 +55,7 @@ li {
   max-width: 250px;
   margin: 0 auto;
   border-radius: 10px;
+  background-color: pink;
 }
 
 .pokemon-card__title,
@@ -65,6 +74,11 @@ li {
   display: flex;
   justify-content: space-between;
   gap: 3rem;
+}
+
+.reservations-container {
+  height: 120px;
+  overflow-y: scroll;
 }
 
 .input-container {
