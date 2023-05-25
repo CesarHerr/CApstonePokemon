@@ -91,7 +91,7 @@ li {
   height: auto;
   background-color: rgba(221, 50, 50, 0.903);
   text-align: center;
-  z-index: 1000;  
+  z-index: 1000;
 }
 
 .popup-container h2 {
@@ -101,7 +101,7 @@ li {
 .popup-container img {
   width: auto;
   max-width: 250px;
-  height: 250px;  
+  height: 250px;
 }
 
 .popup-container input,
@@ -172,6 +172,7 @@ li {
   .popup-container {
     width: 90%;
   }
+
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -179,7 +180,7 @@ li {
 
 .popup-container .popup-skills {
   display: flex;
-  justify-content: space-between;   
+  justify-content: space-between;
 }
 
 .popup-container .comments-list li {
@@ -194,5 +195,3 @@ li {
   overflow-y: scroll;
   background-color: rgba(168, 50, 50, 0.842);
 }
-
-

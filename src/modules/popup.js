@@ -1,4 +1,4 @@
-import {addComment, userComments} from "./Comments.js";
+import { addComment, userComments } from './Comments.js';
 
 const main = document.querySelector('body');
 
@@ -39,22 +39,21 @@ const createPopup = (pokeInfo) => {
     main.removeChild(cards);
   });
 
-const commentBtn = document.querySelector('.commentButton');
+  const commentBtn = document.querySelector('.commentButton');
 
-//Add comment event
-commentBtn.addEventListener('click', (event) => {
-event.preventDefault();
-const { index } = event.target.dataset;
-const takeUser = document.querySelector('.username').value;
-const takeComment = document.querySelector('.comment').value;
+  // Add comment event
+  commentBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    const { index } = event.target.dataset;
+    const takeUser = document.querySelector('.username').value;
+    const takeComment = document.querySelector('.comment').value;
 
-if(takeUser && takeComment) {
-addComment(index, takeUser, takeComment);
-document.querySelector('.comment').value = "";
-document.querySelector('.username').value = "";
-}
-});
-
+    if (takeUser && takeComment) {
+      addComment(index, takeUser, takeComment);
+      document.querySelector('.comment').value = '';
+      document.querySelector('.username').value = '';
+    }
+  });
 };
 
 // fetch API
@@ -83,7 +82,7 @@ const getPokeInfo = () => {
   document.addEventListener('click', (event) => {
     if (event.target.classList.contains('seePokemon')) {
       const { index } = event.target.dataset;
-      getPokemon(index);      
+      getPokemon(index);
       userComments(index);
     }
   });
