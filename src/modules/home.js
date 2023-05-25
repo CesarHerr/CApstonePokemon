@@ -1,3 +1,5 @@
+import likes from './likes.js';
+
 const urlAPI = 'https://pokeapi.co/api/v2/pokemon';
 
 const createHome = async () => {

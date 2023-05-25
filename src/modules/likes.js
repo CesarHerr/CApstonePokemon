@@ -54,4 +54,4 @@ const userComments = async (id) => {
 };
 
 
-export default addComment;
+export default likes;
