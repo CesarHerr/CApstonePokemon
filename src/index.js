@@ -2,7 +2,7 @@ import './style.css';
 import './assets/logo.png';
 import getPokeInfo from './modules/popup.js';
 import createHome from './modules/home.js';
-
+import openCard from './modules/reservePokemon.js';
 import likes from './modules/likes.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -18,7 +18,6 @@ document.querySelector('body').addEventListener('click', (e) => {
     e.target.parentElement.children[1].children[0].innerText = `${number + 1}${text.slice(text.length - 6, text.length)}`;
   }
 });
-import openCard from './modules/reservePokemon.js';
 
 getPokeInfo();
 createHome();
