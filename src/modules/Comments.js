@@ -30,12 +30,24 @@ const userComments = async (id) => {
   try {
     const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/zVvcayqMcKSodjVAeGk6/comments?item_id=${id}`);
     const data = await response.json();
-    console.log(data)
-    return data;
-  } catch (error) {
-    throw new Error('Not Found!!!.');
+    
+    const commentsList= document.querySelector('.comments-list');   
+    
+    
+    commentsList.innerHTML = data
+      .map(
+        (comment) => `
+        <li><em>${comment.creation_date}</em>  <b>${  comment.username} :</b> ${comment.comment}</span></li>                        
+      `,
+      )
+      .join('');
+    
+      
+  } catch  {
+    const commentsList= document.querySelector('.comments-list');   
+    commentsList.innerHTML = 'Give us your Comments!';
   }
 };
 
 
-export default addComment;
+export {addComment, userComments};

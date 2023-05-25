@@ -1,4 +1,4 @@
-import addComment from "./Comments.js";
+import {addComment, userComments} from "./Comments.js";
 
 const main = document.querySelector('body');
 
@@ -20,12 +20,14 @@ const createPopup = (pokeInfo) => {
             <li><b>Weight</b> : ${pokeInfo.weight} kg.</li>
             <li><b>Height</b> : ${pokeInfo.height} mts.</type>            
           </ul>
+          <h3>Comments</h3>
+          <ul class="comments-list"></ul>
         </div>
         <div class="cardPopup__form">
           <h2>Add a Comment</h2>
           <form>
             <input class='username' type="text" name="username" placeholder="Your Name" required>
-            <textarea class='comment' id="text-area" placeholder="Your comments" maxlength="400" name="message" required></textarea>
+            <textarea class='comment'  placeholder="Your comments" maxlength="100" required></textarea>
             <button class="commentButton" data-index="${pokeInfo.id}">Go</button>
           </form>
         </div>      
@@ -37,18 +39,22 @@ const createPopup = (pokeInfo) => {
     main.removeChild(cards);
   });
 
-  const commentBtn = document.querySelector('.commentButton');
+const commentBtn = document.querySelector('.commentButton');
 
+//Add comment event
 commentBtn.addEventListener('click', (event) => {
 event.preventDefault();
 const { index } = event.target.dataset;
 const takeUser = document.querySelector('.username').value;
 const takeComment = document.querySelector('.comment').value;
 
+if(takeUser && takeComment) {
 addComment(index, takeUser, takeComment);
 document.querySelector('.comment').value = "";
 document.querySelector('.username').value = "";
+}
 });
+
 };
 
 // fetch API
@@ -72,12 +78,13 @@ const getPokemon = async (id) => {
   }
 };
 
-// Show Popup
+// Show Popup event
 const getPokeInfo = () => {
   document.addEventListener('click', (event) => {
     if (event.target.classList.contains('seePokemon')) {
       const { index } = event.target.dataset;
-      getPokemon(index);
+      getPokemon(index);      
+      userComments(index);
     }
   });
 };
