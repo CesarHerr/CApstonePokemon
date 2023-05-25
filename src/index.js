@@ -6,10 +6,3 @@ import createHome from './modules/home.js';
 
 getPokeInfo();
 createHome();
-
-const like = document.querySelector('.like');
-
-like.addEventListener('click', () => { 
-  like.classList.toggle('active');
-  console.log('like');
-});
