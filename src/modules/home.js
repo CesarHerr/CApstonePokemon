@@ -28,7 +28,7 @@ const displayScores = (data) => {
           <div class="description">
           <h2>${data.name}</h2>
           <div class="likes">
-            <i class="fa-regular fa-heart"></i>
+            <i class="fa-regular fa-heart like"></i>
             <div class="count-likes">
               <p>n</p>
               <p>likes</p>
