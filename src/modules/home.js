@@ -15,12 +15,16 @@ const createHome = async () => {
   }
 };
 
+const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/hrqIdiXTh94rmLQMrXcG/likes/');
+const datalikes = await response.json();
+
 const main = document.querySelector('header');
 const list = document.createElement('div');
 list.classList.add('pokeGroup');
 main.insertAdjacentElement('afterEnd', list);
 
 const displayScores = (data) => {
+  const like = datalikes[data.id - 1].likes;
   list.innerHTML = data.map(
     (data, index) => `
       <div class="grid-item">
@@ -28,9 +32,9 @@ const displayScores = (data) => {
           <div class="description">
           <h2>${data.name}</h2>
           <div class="likes">
-            <i class="fa-regular fa-heart like"></i>
+            <i class="fa-regular fa-heart like" id=${data.id}></i>
             <div class="count-likes">
-              <p></p>
+              <p>${like}</p>
               <p>likes</p>
             </div>
           </div>
