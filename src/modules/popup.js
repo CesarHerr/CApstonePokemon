@@ -69,29 +69,27 @@ const getPokeInfo = () => {
 
 
 //Working on Involvement API
-const id = 'BZDVsIE83KOtqyh07flb'
+const idComments = 'BZDVsIE83KOtqyh07flb'
 
 //post comment
-const addComment = async (id, username, comment ) => {
+const addComment = async (id, username, comment) => {
   try {
-    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/qpwoieqnak4544154/comments`, {
+    const response = await fetch("https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/zVvcayqMcKSodjVAeGk6/comments", {
       method: 'POST',
-      body: JSON.stringify({
-        item_id: id,
-        username: username,
-        comment: comment,
-      }),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
-    });
-
-    const data = await response.json();
+      body: JSON.stringify({
+        "item_id": id,
+        "username": username,
+        "comment": comment
+      })      
+    })
     
+    const data = await response.text();
+    console.log(data);
     return data;
-    }
-  
-  catch (error) {
+  } catch (error) {
     throw new Error('Game not found!');
   }
 };
@@ -100,15 +98,16 @@ const addComment = async (id, username, comment ) => {
 // Get users comments
 const userComments = async (id) => {
   try {
-    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/qpwoieqnak4544154/comments?item_id=${id}`);
+    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/zVvcayqMcKSodjVAeGk6/comments?item_id=${id}`);
     const data = await response.json();
+    console.log(data)
     return data;
   } catch (error) {
     throw new Error('Not Found!!!.');
   }
 };
 
-
+userComments('item2')
 
 
 
