@@ -2,6 +2,8 @@ import likes from './likes.js';
 
 const urlAPI = 'https://pokeapi.co/api/v2/pokemon';
 
+
+
 const createHome = async () => {
   try {
     const response = await fetch(`${urlAPI}`);
@@ -30,10 +32,10 @@ const displayScores = (data) => {
           <div class="description">
           <h2>${data.name}</h2>
           <div class="likes">
-            <i class="fa-regular fa-heart like" id=${data.id}></i>
+            <i class="fa-regular fa-heart like" id=${}></i>
             <div class="count-likes">
               <p>n</p>
-              <p> ${like} + likes</p>
+              <p> ${}likes</p>
             </div>
           </div>
           </div>
