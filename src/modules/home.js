@@ -1,8 +1,4 @@
-import likes from './likes.js';
-
 const urlAPI = 'https://pokeapi.co/api/v2/pokemon';
-
-
 
 const createHome = async () => {
   try {
@@ -34,7 +30,7 @@ const displayScores = (data) => {
           <div class="likes">
             <i class="fa-regular fa-heart like"></i>
             <div class="count-likes">
-              <p>n</p>
+              <p></p>
               <p>likes</p>
             </div>
           </div>
