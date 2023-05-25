@@ -37,7 +37,7 @@ li {
   max-width: 500px;
   border: 2px solid black;
   border-radius: 5%;
-  background-color: rgb(202, 196, 196);
+  background-color: rgb(196, 202, 197);
   position: absolute;
 }
 
@@ -82,9 +82,14 @@ li {
 }
 
 .popup-container {
-  width: 50%;
-  position: absolute;
-  background-color: rgba(220, 98, 98, 0.903);
+  position: fixed;
+  border-radius: 0.8rem;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  width: 60vw;
+  height: 95vh;
+  background-color: rgba(221, 50, 50, 0.903);
   text-align: center;
   z-index: 1000;
 }
@@ -96,8 +101,7 @@ li {
 .popup-container img {
   width: auto;
   max-width: 300px;
-  height: 300px;
-  margin: 0 auto;
+  height: 300px;  
 }
 
 .popup-container input,
@@ -165,7 +169,15 @@ li {
 
 /* Media query para pantallas de hasta 754px */
 @media (max-width: 754px) {
+  .popup-container {
+    width: 90%;
+  }
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.popup-container ul {
+  display: flex;
+  justify-content: space-between;  
 }

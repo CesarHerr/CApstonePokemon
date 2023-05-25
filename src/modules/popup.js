@@ -1,6 +1,6 @@
 import addComment from "./Comments.js";
 
-const main = document.querySelector('header');
+const main = document.querySelector('body');
 
 const urlAPI = 'https://pokeapi.co/api/v2/pokemon';
 
@@ -15,10 +15,10 @@ const createPopup = (pokeInfo) => {
           <h2>${pokeInfo.name}</h2> 
           <img class="pokeImage" src="${pokeInfo.img}" alt="pokeball logo">        
           <ul class="popup-skills">
-            <li>Type : ${pokeInfo.type}</type>
-            <li>Ability : ${pokeInfo.ability} </li>
-            <li>Weight : ${pokeInfo.weight} kg.</li>
-            <li>height : ${pokeInfo.height} mts.</type>            
+            <li><b>Type</b> : ${pokeInfo.type}</type>
+            <li><b>Ability</b> : ${pokeInfo.ability} </li>
+            <li><b>Weight</b> : ${pokeInfo.weight} kg.</li>
+            <li><b>Height</b> : ${pokeInfo.height} mts.</type>            
           </ul>
         </div>
         <div class="cardPopup__form">
@@ -31,7 +31,7 @@ const createPopup = (pokeInfo) => {
         </div>      
       </div>`;
 
-  main.appendChild(cards);
+  main.insertAdjacentElement('afterBegin', cards);
   const close = document.querySelector('.close');
   close.addEventListener('click', () => {
     main.removeChild(cards);
