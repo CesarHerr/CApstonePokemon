@@ -29,6 +29,11 @@ li {
   padding: 0.5rem;
 }
 
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
 .pokemon-card {
   display: flex;
   flex-direction: column;
@@ -145,10 +150,11 @@ li {
 .grid-item {
   display: flex;
   flex-direction: column;
+  flex: 1;
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .size {
@@ -156,6 +162,7 @@ li {
 }
 
 .description {
+  padding: 1rem;
   display: flex;
   gap: 1rem;
 }
@@ -169,7 +176,17 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.25rem;
+  gap: 1rem;
+}
+
+.fa-heart {
+  font-size: 1rem;
+  cursor: default;
+}
+
+.fa-heart:hover {
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .count-likes {
