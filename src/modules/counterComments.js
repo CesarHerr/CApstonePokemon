@@ -3,12 +3,9 @@ const commentCounter = (allComments) => {
 
   if (howManyComments !== 0) {
     return howManyComments;
-  
-  } else {
-
-    return 0;
-  
   }
+
+  return 0;
 };
 
 export default commentCounter;

@@ -1,12 +1,10 @@
-import commentCounter from "./counterComments.js";
+import commentCounter from './counterComments.js';
 
 describe('commentCounter', () => {
-
   test('Empty div (No comments)', () => {
-
     // Arrange
     const allComments = document.createElement('div');
-    
+
     document.body.appendChild(allComments);
 
     // Act
@@ -16,8 +14,7 @@ describe('commentCounter', () => {
     expect(result).toBe(0);
   });
 
-    test('Element counter inside of a div of comments ', () => {
-
+  test('Element counter inside of a div of comments ', () => {
     // Arrange
     const allComments = document.createElement('div');
     allComments.innerHTML = `
@@ -33,6 +30,5 @@ describe('commentCounter', () => {
 
     // Assert
     expect(result).toBe(3);
-  });  
-  
+  });
 });
