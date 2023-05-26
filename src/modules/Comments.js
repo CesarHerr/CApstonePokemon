@@ -18,11 +18,13 @@ const userComments = async (id) => {
       `,
       )
       .join('');
-    commentCounter();
+    const totalComments = commentCounter(commentsList);
+    document.getElementById('count').innerHTML = `(${totalComments})`;
   } catch {
     const commentsList = document.querySelector('.comments-list');
     commentsList.innerHTML = 'Give us your Comments!';
-    commentCounter();
+    const totalComments = commentCounter(commentsList);
+    document.getElementById('count').innerHTML = `(${totalComments})`;
   }
 };
 

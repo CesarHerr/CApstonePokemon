@@ -1,11 +1,11 @@
-const commentCounter = () => {
-  const howManyComments = document.querySelector('.comments-list').childElementCount;
+const commentCounter = (allComments) => {
+  const howManyComments = allComments.childElementCount;
 
   if (howManyComments !== 0) {
-    document.getElementById('count').innerHTML = `(${howManyComments})`;
-  } else {
-    document.getElementById('count').innerHTML = '  (No comment yet)';
+    return howManyComments;
   }
+
+  return 0;
 };
 
 export default commentCounter;
