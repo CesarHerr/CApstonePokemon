@@ -1,3 +1,5 @@
+import commentCounter from './counterComments.js';
+
 // Working on Involvement API
 const idComments = 'zVvcayqMcKSodjVAeGk6';
 
@@ -16,9 +18,13 @@ const userComments = async (id) => {
       `,
       )
       .join('');
+    const totalComments = commentCounter(commentsList);
+    document.getElementById('count').innerHTML = `(${totalComments})`;
   } catch {
     const commentsList = document.querySelector('.comments-list');
     commentsList.innerHTML = 'Give us your Comments!';
+    const totalComments = commentCounter(commentsList);
+    document.getElementById('count').innerHTML = `(${totalComments})`;
   }
 };
 

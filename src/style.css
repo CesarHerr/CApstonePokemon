@@ -99,6 +99,11 @@ button:hover {
 .pokemon-card__title,
 .pokemon-card__section-title {
   margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
 }
 
 .columns {
@@ -266,4 +271,9 @@ button:hover {
   height: 120px;
   overflow-y: scroll;
   background-color: rgba(168, 50, 50, 0.842);
+}
+
+.popup-container h3,
+.popup-container p {
+  display: inline;
 }

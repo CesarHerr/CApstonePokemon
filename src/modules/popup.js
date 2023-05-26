@@ -20,7 +20,7 @@ const createPopup = (pokeInfo) => {
             <li><b>Weight</b> : ${pokeInfo.weight} kg.</li>
             <li><b>Height</b> : ${pokeInfo.height} mts.</type>            
           </ul>
-          <h3>Comments</h3>
+          <h3>Comments</h3><p id="count"></p>
           <ul class="comments-list"></ul>
         </div>
         <div class="cardPopup__form">

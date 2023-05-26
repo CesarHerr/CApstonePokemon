@@ -1,3 +1,5 @@
+import reservationCounter from './reservationCounter';
+
 const main = document.querySelector('header');
 const urlAPI = 'https://pokeapi.co/api/v2/pokemon';
 const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
@@ -21,7 +23,7 @@ const createPokemonCard = (poke, reservations) => {
         <p class="pokemon-card__info">Weight: ${poke.weight} lbs</p>
       </div>
     </div>
-    <h3 class="pokemon-card__section-title">Reservations</h3><br>
+    <h3 class="pokemon-card__section-title">Reservations<p id="counterReserve"></p></h3><br>
     <div class="reservations-container"></div>
     <div class="input-container">
       <h3 class="pokemon-card__section-title">Add a reservation</h3><br>
@@ -39,6 +41,14 @@ const createPokemonCard = (poke, reservations) => {
     const reservationsContainer = card.querySelector('.reservations-container');
     reservationsContainer.appendChild(reservationParagraph);
   });
+
+  const time = () => {
+    const reservationsContainer = card.querySelector('.reservations-container');
+    const reservation = reservationCounter(reservationsContainer);
+    document.getElementById('counterReserve').innerHTML = reservation;
+  };
+
+  setTimeout(time, 1000);
 
   main.appendChild(card);
 
@@ -92,6 +102,7 @@ const createPokemonCard = (poke, reservations) => {
         alert(error.message);
       }
     }
+    setTimeout(time, 1000);
   });
 };
 
@@ -145,4 +156,4 @@ const openCard = () => {
   });
 };
 
-openCard();
+export default openCard;
