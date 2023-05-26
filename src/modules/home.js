@@ -54,7 +54,7 @@ const displayScores = async (data) => {
             </div>
           </div>
           </div>
-          <button class="seePokemon" data-index=${index + 1}>comments</button>
+          <button class="seePokemon" data-index=${index + 1}>Comments</button>
           <button class="reservePokemon" data-index=${index + 1}>Reservations</button>
       </div>
       `,
@@ -62,7 +62,7 @@ const displayScores = async (data) => {
     .join('');
 
   const totalPokemon = await pokeCounter(list);
-  document.getElementById('countPokemon').innerHTML = totalPokemon;
+  document.getElementById('countPokemon').innerHTML = `Counter: ${totalPokemon}`;
 
   for (let i = 0; i <= data.length - 1; i += 1) {
     const index = Number(i) + 1;

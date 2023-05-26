@@ -41,7 +41,10 @@ i {
   width: auto;
 }
 
-li a {
+li,
+a,
+#countPokemon {
+  margin: 0;
   list-style: none;
   padding: 0.5rem;
   color: #fff;
