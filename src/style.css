@@ -4,7 +4,7 @@
 }
 
 body {
-  background-image: radial-gradient(circle, #ff0000, #0000ff);
+  background-image: radial-gradient(circle, #f00, #00f);
 }
 
 header {
@@ -41,7 +41,8 @@ i {
   width: auto;
 }
 
-li, a {
+li, 
+a {
   list-style: none;
   padding: 0.5rem;
   color: #fff;
