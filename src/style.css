@@ -226,3 +226,8 @@ h2 {
   overflow-y: scroll;
   background-color: rgba(168, 50, 50, 0.842);
 }
+
+.popup-container h3,
+.popup-container p {
+  display: inline;
+}
