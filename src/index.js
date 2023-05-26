@@ -1,27 +1,18 @@
 import './style.css';
-import pokemonlogo from './assets/logo.png';
+import './assets/logo.png';
 import getPokeInfo from './modules/popup.js';
-import createHome from './modules/home.js';
+import { createHome } from './modules/home.js';
 import openCard from './modules/reservePokemon.js';
 import likes from './modules/likes.js';
-
-const logo = document.querySelector('.logo');
-logo.src = pokemonlogo;
 
 document.addEventListener('DOMContentLoaded', async () => {
   getPokeInfo();
   createHome();
+  openCard();
 });
 
 document.querySelector('body').addEventListener('click', (e) => {
   if (e.target.matches('.like')) {
     likes(e);
-    const text = e.target.parentElement.children[1].children[0].innerText;
-    const number = Number(text.slice(0, text.length - 6));
-    e.target.parentElement.children[1].children[0].innerText = `${number + 1}${text.slice(text.length - 6, text.length)}`;
   }
 });
-
-getPokeInfo();
-createHome();
-openCard();
