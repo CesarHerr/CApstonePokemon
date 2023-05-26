@@ -4,7 +4,6 @@ const createHome = async () => {
   try {
     const response = await fetch(`${urlAPI}`);
     const data = await response.json();
-
     // eslint-disable-next-line no-use-before-define
     displayScores(data.results);
   } catch (error) {
