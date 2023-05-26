@@ -1,3 +1,5 @@
+import pokeCounter from './counterPokemon.js';
+
 const urlAPI = 'https://pokeapi.co/api/v2/pokemon';
 
 const createHome = async () => {
@@ -34,6 +36,11 @@ const list = document.createElement('div');
 list.classList.add('pokeGroup');
 main.insertAdjacentElement('afterEnd', list);
 
+const putCounter = document.querySelector('ul');
+const pokemonCounter = document.createElement('p');
+pokemonCounter.id = 'countPokemon';
+putCounter.insertAdjacentElement('afterBegin', pokemonCounter);
+
 const displayScores = async (data) => {
   list.innerHTML = data.map(
     (data, index) => `
@@ -55,6 +62,9 @@ const displayScores = async (data) => {
       `,
   )
     .join('');
+
+  const totalPokemon = await pokeCounter(list);
+  document.getElementById('countPokemon').innerHTML = totalPokemon;
 
   for (let i = 0; i <= data.length - 1; i += 1) {
     const index = Number(i) + 1;
