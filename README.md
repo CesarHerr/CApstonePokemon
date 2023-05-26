@@ -30,7 +30,11 @@ Welcome to my Pokemon project
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
-
+HTML
+JS
+CSS
+Webpack
+Jest
 <details>
   <summary>Client</summary>
   <ul>
@@ -43,12 +47,18 @@ Welcome to my Pokemon project
 ### Key Features <a name="key-features"></a>
 
 - **This site will give you info about pokemons**
+- **Cards with characters**
+- **Popup windows**
+- **Likes and comments for characters**
+- **Accept reservations**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
+
+https://drive.google.com/file/d/19d5bVYPcDa4tWoEdHIXECbbOqUkDbYzT/view?usp=sharing
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
