@@ -25,6 +25,7 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.27.5",
+    "file-loader": "^6.2.0",
     "hint": "^2.0.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.3",
@@ -35,6 +36,7 @@
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "^3.21.0",
+    "url-loader": "^4.1.1",
     "webpack": "^5.83.1",
     "webpack-cli": "^5.1.1",
     "webpack-dev-server": "^4.13.2"
