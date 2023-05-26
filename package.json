@@ -4,7 +4,8 @@
   "description": "Welcome to my Webpack project",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
+    "watch": "jest --watch *.js",
     "build": "webpack --mode production",
     "start": "webpack serve --mode development"
   },
@@ -20,7 +21,10 @@
   },
   "homepage": "https://github.com/Jrmcuervo/webpack#readme",
   "devDependencies": {
+    "@babel/core": "^7.22.1",
+    "@babel/preset-env": "^7.22.1",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^29.5.0",
     "css-loader": "^6.7.3",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -30,6 +34,7 @@
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.3",
     "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
     "lint-staged": "^13.2.0",
     "style-loader": "^3.3.2",
     "stylelint": "^13.13.1",

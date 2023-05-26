@@ -1,3 +1,5 @@
+import reservationCounter from './reservationCounter';
+
 const main = document.querySelector('header');
 const urlAPI = 'https://pokeapi.co/api/v2/pokemon';
 const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
@@ -21,7 +23,7 @@ const createPokemonCard = (poke, reservations) => {
         <p class="pokemon-card__info">Weight: ${poke.weight} lbs</p>
       </div>
     </div>
-    <h3 class="pokemon-card__section-title">Reservations</h3><br>
+    <h3 class="pokemon-card__section-title">Reservations<p id="counterReserve"></p></h3><br>
     <div class="reservations-container"></div>
     <div class="input-container">
       <h3 class="pokemon-card__section-title">Add a reservation</h3><br>
@@ -31,37 +33,22 @@ const createPokemonCard = (poke, reservations) => {
       <button class="pokemon-card__button">Reserve</button>
     </div>`;
 
-  const reservationsContainer = card.querySelector('.reservations-container');
-
-  // Eliminar contenido previo del contenedor de reservaciones
-  reservationsContainer.innerHTML = '';
-
   reservations.forEach((reservation) => {
     const reservationParagraph = document.createElement('p');
     reservationParagraph.classList.add('pokemon-card__reservation');
     reservationParagraph.textContent = `${reservation.date_start} - ${reservation.date_end} by ${reservation.username}`;
 
+    const reservationsContainer = card.querySelector('.reservations-container');
     reservationsContainer.appendChild(reservationParagraph);
   });
 
-  // Contador de reservaciones
-  const reservationsCount = reservations.length;
+  const time = () => {
+    const reservationsContainer = card.querySelector('.reservations-container');
+    const reservation = reservationCounter(reservationsContainer);
+    document.getElementById('counterReserve').innerHTML = reservation;
+  };
 
-  // Mostrar el contador en pantalla
-  const reservationsCountParagraph = document.createElement('p');
-  reservationsCountParagraph.classList.add('pokemon-card__reservation-count');
-  reservationsCountParagraph.textContent = `Reservations: ${reservationsCount}`;
-
-  reservationsContainer.prepend(reservationsCountParagraph);
-
-  // Mostrar mensaje cuando no hay reservaciones
-  if (reservationsCount === 0) {
-    const noReservationsParagraph = document.createElement('p');
-    noReservationsParagraph.classList.add('pokemon-card__no-reservations');
-    noReservationsParagraph.textContent = 'No reservations yet';
-
-    reservationsContainer.appendChild(noReservationsParagraph);
-  }
+  setTimeout(time, 1000);
 
   main.appendChild(card);
 
@@ -98,31 +85,16 @@ const createPokemonCard = (poke, reservations) => {
         });
 
         if (response.status === 201) {
-          const newReservation = {
-            date_start: startDate,
-            date_end: endDate,
-            username: name,
-          };
-
-          reservations.push(newReservation);
-
           const reservationParagraph = document.createElement('p');
           reservationParagraph.classList.add('pokemon-card__reservation');
           reservationParagraph.textContent = `${startDate} - ${endDate} by ${name}`;
 
+          const reservationsContainer = card.querySelector('.reservations-container');
           reservationsContainer.appendChild(reservationParagraph);
-
-          reservationsCountParagraph.textContent = `Reservations: ${reservations.length}`;
 
           nameInput.value = '';
           startDateInput.value = '';
           endDateInput.value = '';
-
-          // Eliminar el mensaje "No reservations yet" si corresponde
-          const noReservationsParagraph = reservationsContainer.querySelector('.pokemon-card__no-reservations');
-          if (noReservationsParagraph) {
-            reservationsContainer.removeChild(noReservationsParagraph);
-          }
         } else {
           throw new Error('Failed to create reservation');
         }
@@ -130,6 +102,7 @@ const createPokemonCard = (poke, reservations) => {
         alert(error.message);
       }
     }
+    setTimeout(time, 1000);
   });
 };
 

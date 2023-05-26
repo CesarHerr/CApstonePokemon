@@ -25,7 +25,6 @@ const fetchLikes = async (index) => {
     countLike = filteredLikes[0].likes;
   }
 
-  console.log(countLike);
   const sumLikes = document.getElementById(index);
   sumLikes.innerHTML = countLike;
 };
