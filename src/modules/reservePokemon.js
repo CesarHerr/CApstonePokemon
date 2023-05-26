@@ -145,4 +145,4 @@ const openCard = () => {
   });
 };
 
-openCard();
+export default openCard;
