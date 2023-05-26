@@ -1,8 +1,7 @@
-import { pokeCounter } from "./counterComments.js";
+import pokeCounter from './counterPokemon.js';
 
 describe('PokeCounter', () => {
   test('Counting some pokemons ', () => {
-
     // Arrange
     const allPokemon = document.createElement('div');
     allPokemon.innerHTML = `
@@ -21,13 +20,12 @@ describe('PokeCounter', () => {
 
     // Assert
     expect(result).toBe(6);
-  });  
+  });
 
   test('No Pokemon on page', () => {
-
     // Arrange
     const allPokemon = document.createElement('div');
-    
+
     document.body.appendChild(allPokemon);
 
     // Act
@@ -36,5 +34,4 @@ describe('PokeCounter', () => {
     // Assert
     expect(result).toBe(0);
   });
-  
 });
