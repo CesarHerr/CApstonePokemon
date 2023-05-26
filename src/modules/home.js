@@ -12,12 +12,28 @@ const createHome = async () => {
   }
 };
 
+const fetchLikes = async (index) => {
+  const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/4fC4h2xqQOQaR0Thy8n4/likes/');
+  const dataLikes = await response.json();
+
+  let countLike = 0;
+
+  const filteredLikes = dataLikes.filter((like) => like.item_id === index);
+  if (filteredLikes.length > 0 && filteredLikes[0].likes) {
+    countLike = filteredLikes[0].likes;
+  }
+
+  console.log(countLike);
+  const sumLikes = document.getElementById(index);
+  sumLikes.innerHTML = countLike;
+};
+
 const main = document.querySelector('header');
 const list = document.createElement('div');
 list.classList.add('pokeGroup');
 main.insertAdjacentElement('afterEnd', list);
 
-const displayScores = (data) => {
+const displayScores = async (data) => {
   list.innerHTML = data.map(
     (data, index) => `
       <div class="grid-item">
@@ -25,9 +41,9 @@ const displayScores = (data) => {
           <div class="description">
           <h2>${data.name}</h2>
           <div class="likes">
-            <i class="fa-regular fa-heart"></i>
+            <i class="fa-regular fa-heart like" data-id=${index + 1}></i>
             <div class="count-likes">
-              <p>n</p>
+              <p class='sum_Likes' id=${index + 1}></p>
               <p>likes</p>
             </div>
           </div>
@@ -38,6 +54,11 @@ const displayScores = (data) => {
       `,
   )
     .join('');
+
+  for (let i = 0; i <= data.length - 1; i += 1) {
+    const index = Number(i) + 1;
+    fetchLikes(index);
+  }
 };
 
-export default createHome;
+export { createHome, fetchLikes };

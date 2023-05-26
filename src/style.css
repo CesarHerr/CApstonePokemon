@@ -29,6 +29,11 @@ li {
   padding: 0.5rem;
 }
 
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
 .pokemon-card {
   display: flex;
   flex-direction: column;
@@ -96,9 +101,14 @@ li {
 }
 
 .popup-container {
-  width: 50%;
-  position: absolute;
-  background-color: rgba(220, 98, 98, 0.903);
+  position: fixed;
+  border-radius: 0.8rem;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  width: 60vw;
+  height: auto;
+  background-color: rgba(221, 50, 50, 0.903);
   text-align: center;
   z-index: 1000;
 }
@@ -109,9 +119,8 @@ li {
 
 .popup-container img {
   width: auto;
-  max-width: 300px;
-  height: 300px;
-  margin: 0 auto;
+  max-width: 250px;
+  height: 250px;
 }
 
 .popup-container input,
@@ -145,10 +154,11 @@ li {
 .grid-item {
   display: flex;
   flex-direction: column;
+  flex: 1;
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .size {
@@ -156,6 +166,7 @@ li {
 }
 
 .description {
+  padding: 1rem;
   display: flex;
   gap: 1rem;
 }
@@ -169,7 +180,17 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.25rem;
+  gap: 1rem;
+}
+
+.fa-heart {
+  font-size: 1rem;
+  cursor: default;
+}
+
+.fa-heart:hover {
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .count-likes {
@@ -179,7 +200,29 @@ li {
 
 /* Media query para pantallas de hasta 754px */
 @media (max-width: 754px) {
+  .popup-container {
+    width: 90%;
+  }
+
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.popup-container .popup-skills {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup-container .comments-list li {
+  margin: 0;
+  padding: 0;
+}
+
+.popup-container .comments-list {
+  display: flex;
+  flex-direction: column;
+  height: 120px;
+  overflow-y: scroll;
+  background-color: rgba(168, 50, 50, 0.842);
 }

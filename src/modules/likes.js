@@ -1,7 +1,8 @@
-const likes = (e) => {
-  const involmentAppID = 'hrqIdiXTh94rmLQMrXcG';
+import { fetchLikes } from './home.js';
+
+const likes = async (e) => {
   const index = Number(e.target.dataset.id);
-  fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${involmentAppID}/likes/`, {
+  fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/4fC4h2xqQOQaR0Thy8n4/likes/', {
     method: 'POST',
     body: JSON.stringify({
       item_id: index,
@@ -10,8 +11,7 @@ const likes = (e) => {
       'Content-Type': 'application/json',
     },
   });
-  const text = e.target.parentElement.children[1].children[0].innerText;
-  const number = Number(text.slice(0, text.length - 6));
-  e.target.parentElement.children[1].children[0].innerText = `${number + 1}${text.slice(text.length - 6, text.length)}`;
+  await fetchLikes(index);
 };
+
 export default likes;
