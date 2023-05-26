@@ -1,4 +1,6 @@
-const main = document.querySelector('header');
+import { addComment, userComments } from './Comments.js';
+
+const main = document.querySelector('body');
 
 const urlAPI = 'https://pokeapi.co/api/v2/pokemon';
 
@@ -13,26 +15,44 @@ const createPopup = (pokeInfo) => {
           <h2>${pokeInfo.name}</h2> 
           <img class="pokeImage" src="${pokeInfo.img}" alt="pokeball logo">        
           <ul class="popup-skills">
-            <li>Type : ${pokeInfo.type}</type>
-            <li>Ability : ${pokeInfo.ability} </li>
-            <li>Weight : ${pokeInfo.weight} kg.</li>
-            <li>height : ${pokeInfo.height} mts.</type>            
+            <li><b>Type</b> : ${pokeInfo.type}</type>
+            <li><b>Ability</b> : ${pokeInfo.ability} </li>
+            <li><b>Weight</b> : ${pokeInfo.weight} kg.</li>
+            <li><b>Height</b> : ${pokeInfo.height} mts.</type>            
           </ul>
+          <h3>Comments</h3>
+          <ul class="comments-list"></ul>
         </div>
         <div class="cardPopup__form">
           <h2>Add a Comment</h2>
           <form>
             <input class='username' type="text" name="username" placeholder="Your Name" required>
-            <textarea class='comment' id="text-area" placeholder="Your comments" maxlength="400" name="message" required></textarea>
+            <textarea class='comment'  placeholder="Your comments" maxlength="100" required></textarea>
             <button class="commentButton" data-index="${pokeInfo.id}">Go</button>
           </form>
         </div>      
       </div>`;
 
-  main.appendChild(cards);
+  main.insertAdjacentElement('afterBegin', cards);
   const close = document.querySelector('.close');
   close.addEventListener('click', () => {
     main.removeChild(cards);
+  });
+
+  const commentBtn = document.querySelector('.commentButton');
+
+  // Add comment event
+  commentBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    const { index } = event.target.dataset;
+    const takeUser = document.querySelector('.username').value;
+    const takeComment = document.querySelector('.comment').value;
+
+    if (takeUser && takeComment) {
+      addComment(index, takeUser, takeComment);
+      document.querySelector('.comment').value = '';
+      document.querySelector('.username').value = '';
+    }
   });
 };
 
@@ -57,12 +77,13 @@ const getPokemon = async (id) => {
   }
 };
 
-// Show Popup
+// Show Popup event
 const getPokeInfo = () => {
   document.addEventListener('click', (event) => {
     if (event.target.classList.contains('seePokemon')) {
       const { index } = event.target.dataset;
       getPokemon(index);
+      userComments(index);
     }
   });
 };
