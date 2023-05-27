@@ -11,20 +11,20 @@ const userComments = async (id) => {
 
     const commentsList = document.querySelector('.comments-list');
 
-    commentsList.innerHTML = data
+    commentsList.innerHTML = await data
       .map(
         (comment) => `
         <li><em>${comment.creation_date}</em>  <b>${comment.username} :</b> ${comment.comment}</span></li>                        
       `,
       )
       .join('');
-    const totalComments = commentCounter(commentsList);
-    document.getElementById('count').innerHTML = `(${totalComments})`;
+    const totalComments = await commentCounter(commentsList);
+    document.getElementById('count').innerHTML = `${totalComments}`;
   } catch {
     const commentsList = document.querySelector('.comments-list');
     commentsList.innerHTML = 'Give us your Comments!';
-    const totalComments = commentCounter(commentsList);
-    document.getElementById('count').innerHTML = `(${totalComments})`;
+    const totalComments = await commentCounter(commentsList);
+    document.getElementById('count').innerHTML = `${totalComments}`;
   }
 };
 
@@ -45,7 +45,7 @@ const addComment = async (id, username, comment) => {
 
     const data = await response.text();
 
-    userComments(id);
+    await userComments(id);
     return data;
   } catch (error) {
     throw new Error('User not found!');

@@ -6,31 +6,33 @@ const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstone
 
 const createPokemonCard = (poke, reservations) => {
   const card = document.createElement('div');
-  card.className = 'pokemon-card';
+  card.className = 'background';
   card.innerHTML = `
-    <div class="pokemon-card__image">
-      <img src="${poke.img}" alt="Imagen" class="pokemon-card__image">
-      <span class="material-symbols-outlined close">close</span>
-    </div>
-    <h2 class="pokemon-card__title">${poke.name}</h2>
-    <div class="columns">
-      <div class="column">
-        <p class="pokemon-card__info">Ability: ${poke.ability}</p>
-        <p class="pokemon-card__info">Moves: ${poke.moves}</p>
+    <div class="pokemon-card">
+      <div class="pokemon-card__image">
+        <img src="${poke.img}" alt="Imagen" class="pokemon-card__image">
+        <span class="material-symbols-outlined close">close</span>
       </div>
-      <div class="column">
-        <p class="pokemon-card__info">Height: ${poke.height}"</p>
-        <p class="pokemon-card__info">Weight: ${poke.weight} lbs</p>
+      <h2 class="pokemon-card__title">${poke.name}</h2>
+      <div class="columns">
+        <div class="column">
+          <p class="pokemon-card__info">Ability: ${poke.ability}</p>
+          <p class="pokemon-card__info">Type: ${poke.type} </p>
+        </div>
+        <div class="column">
+          <p class="pokemon-card__info">Height: ${poke.height}"</p>
+          <p class="pokemon-card__info">Weight: ${poke.weight} lbs</p>
+        </div>
       </div>
-    </div>
-    <h3 class="pokemon-card__section-title">Reservations<p id="counterReserve"></p></h3><br>
-    <div class="reservations-container"></div>
-    <div class="input-container">
-      <h3 class="pokemon-card__section-title">Add a reservation</h3><br>
-      <input type="text" id="nameInput" placeholder="Name" class="pokemon-card__input" required>
-      <input type="date" id="startDateInput" placeholder="Start date" class="pokemon-card__input" required>
-      <input type="date" id="endDateInput" placeholder="End date" class="pokemon-card__input" required>
-      <button class="pokemon-card__button">Reserve</button>
+      <h3 class="pokemon-card__section-title">Reservations<p id="counterReserve"></p></h3><br>
+      <div class="reservations-container"></div>
+      <div class="input-container">
+        <h3 class="pokemon-card__section-title add-reservation">Add a reservation</h3><br>
+        <input type="text" id="nameInput" placeholder="Name" class="pokemon-card__input" required>
+        <input type="date" id="startDateInput" placeholder="Start date" class="pokemon-card__input" required>
+        <input type="date" id="endDateInput" placeholder="End date" class="pokemon-card__input" required>
+        <button class="pokemon-card__button">Reserve</button>
+      </div>
     </div>`;
 
   reservations.forEach((reservation) => {
@@ -41,6 +43,10 @@ const createPokemonCard = (poke, reservations) => {
     const reservationsContainer = card.querySelector('.reservations-container');
     reservationsContainer.appendChild(reservationParagraph);
   });
+
+  const zIndex = document.querySelector('.pokeGroup');
+  zIndex.classList.toggle('z-index');
+  document.body.style.overflow = 'hidden';
 
   const time = () => {
     const reservationsContainer = card.querySelector('.reservations-container');
@@ -54,6 +60,8 @@ const createPokemonCard = (poke, reservations) => {
 
   const close = card.querySelector('.close');
   close.addEventListener('click', () => {
+    zIndex.classList.toggle('z-index');
+    document.body.style.overflow = 'auto';
     main.removeChild(card);
   });
 

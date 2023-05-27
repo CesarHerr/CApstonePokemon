@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Press+Start+2P&display=swap");
+
 * {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   box-sizing: border-box;
 }
 
@@ -72,12 +74,14 @@ button:hover {
   flex-direction: column;
   margin: 50rem auto 0;
   padding: 2rem;
-  max-width: 500px;
+  width: 50%;
+  max-width: 700px;
+  min-width: 520px;
   border: 2px solid black;
-  border-radius: 5%;
+  border-radius: 10rem 1rem 10rem 1rem;
   background-color: rgb(202, 196, 196);
   position: fixed;
-  top: -750px;
+  top: -780px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
@@ -92,8 +96,7 @@ button:hover {
   flex-direction: row;
   max-width: 250px;
   margin: 0 auto;
-  border-radius: 10px;
-  background-color: pink;
+  width: 80%;
 }
 
 .pokemon-card__title,
@@ -104,9 +107,16 @@ button:hover {
   justify-content: flex-start;
   align-items: center;
   gap: 1rem;
+  border: none;
+}
+
+.add-reservation {
+  position: relative;
+  top: 80px;
 }
 
 .columns {
+  margin-top: -20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -119,9 +129,25 @@ button:hover {
   gap: 3rem;
 }
 
+.pokemon-card h3 {
+  margin-top: -50px;
+  font-family: "Fugaz One", cursive;
+  font-size: 1.5rem;
+}
+
+.pokemon-card h2 {
+  font-family: "Press Start 2P", cursive;
+}
+
 .reservations-container {
+  margin-top: -40px;
   height: 120px;
   overflow-y: scroll;
+}
+
+.reservations-container p {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.7rem;
 }
 
 .input-container {
@@ -140,15 +166,54 @@ button:hover {
 
 .popup-container {
   position: fixed;
-  border-radius: 0.8rem;
+  border-radius: 10rem 1rem 10rem 1rem;
   top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
-  width: 60vw;
+  width: 60%;
   height: auto;
-  background-color: rgba(221, 50, 50, 0.903);
+  background-color: rgba(48, 39, 39, 0.968);
   text-align: center;
-  z-index: 1000;
+  z-index: 2;
+}
+
+.background {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(5px);
+}
+
+.popup-header {
+  height: 70vh;
+  width: 100%;
+}
+
+.popup-header p {
+  margin-left: 1rem;
+  font-size: 1rem;
+  font-family: "Press Start 2P", cursive;
+  color: aliceblue;
+}
+
+#counterReserve {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.5rem;
+}
+
+.popup-header h2 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2rem;
+  color: rgb(195, 224, 249);
+  border: none;
+}
+
+.popup-header h3 {
+  font-family: "Fugaz One", cursive;
+  color: rgb(195, 224, 249);
 }
 
 .popup-container h2 {
@@ -156,7 +221,8 @@ button:hover {
 }
 
 .popup-container img {
-  width: auto;
+  width: 20%;
+  margin-top: -30px;
   max-width: 250px;
   height: 250px;
 }
@@ -164,6 +230,8 @@ button:hover {
 .popup-container input,
 .popup-container textarea {
   width: 100%;
+  border: none;
+  border-radius: 0.4rem;
 }
 
 .popup-container form {
@@ -177,6 +245,13 @@ button:hover {
   font-size: 4rem;
 }
 
+.cardPopup__form h2 {
+  font-family: "Press Start 2P", cursive;
+  color: aliceblue;
+  font-size: 1rem;
+  border: none;
+}
+
 .pokeGroup {
   display: flex;
   flex-wrap: wrap;
@@ -186,6 +261,10 @@ button:hover {
   padding: 2rem;
   justify-content: space-around;
   align-items: stretch;
+}
+
+.z-index {
+  z-index: -1;
 }
 
 /* images styles */
@@ -248,11 +327,32 @@ button:hover {
 @media (max-width: 754px) {
   .popup-container {
     width: 90%;
+    height: 95vh;
+    border-radius: 6rem 0 6rem 0;
+  }
+
+  .pokemon-card {
+    width: 50%;
+    min-width: 400px;
+  }
+
+  .reservations-container p {
+    font-size: 0.5rem;
   }
 
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .popup-header h2 {
+    font-size: 1.4rem;
+    color: rgb(195, 224, 249);
+    border: none;
+  }
+}
+
+.popup-skills {
+  margin-top: -1rem;
 }
 
 .popup-container .popup-skills {
@@ -260,9 +360,16 @@ button:hover {
   justify-content: space-between;
 }
 
+.popup-skills li {
+  font-size: 1.1rem;
+}
+
 .popup-container .comments-list li {
-  margin: 0;
+  margin-bottom: -10px;
   padding: 0;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.7rem;
+  line-height: 0.7rem;
 }
 
 .popup-container .comments-list {
@@ -270,7 +377,14 @@ button:hover {
   flex-direction: column;
   height: 120px;
   overflow-y: scroll;
-  background-color: rgba(168, 50, 50, 0.842);
+  background-color: rgba(81, 41, 41, 0.842);
+}
+
+.popup-container button {
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 0.4rem;
 }
 
 .popup-container h3,
