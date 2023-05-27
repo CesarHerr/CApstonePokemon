@@ -1,13 +1,21 @@
-import _ from 'lodash';
 import './style.css';
+import logopokemon from './assets/logo.png';
+import getPokeInfo from './modules/popup.js';
+import { createHome } from './modules/home.js';
+import openCard from './modules/reservePokemon.js';
+import likes from './modules/likes.js';
 
-function component() {
-  const element = document.createElement('div');
+const logo = document.querySelector('.logo');
+logo.src = logopokemon;
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+document.addEventListener('DOMContentLoaded', async () => {
+  getPokeInfo();
+  createHome();
+  openCard();
+});
 
-  return element;
-}
-
-document.body.appendChild(component());
+document.querySelector('body').addEventListener('click', (e) => {
+  if (e.target.matches('.like')) {
+    likes(e);
+  }
+});

@@ -1,7 +1,394 @@
-div {
-  color: red;
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Press+Start+2P&display=swap");
+
+* {
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: bisque;
+  background-image: radial-gradient(circle, #f00, #00f);
+}
+
+header {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  padding: 1rem;
+  margin: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.logo {
+  width: 7%;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+i {
+  width: auto;
+}
+
+li,
+a,
+#countPokemon {
+  margin: 0;
+  list-style: none;
+  padding: 0.5rem;
+  color: #fff;
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  margin: 0;
+  padding: 0.5rem;
+  border: solid 1px black;
+}
+
+button {
+  cursor: pointer;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+  font-weight: bolder;
+}
+
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  margin: 50rem auto 0;
+  padding: 2rem;
+  width: 50%;
+  max-width: 700px;
+  min-width: 520px;
+  border: 2px solid black;
+  border-radius: 10rem 1rem 10rem 1rem;
+  background-color: rgb(202, 196, 196);
+  position: fixed;
+  top: -780px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.close {
+  cursor: pointer;
+}
+
+.pokemon-card__image {
+  display: flex;
+  flex-direction: row;
+  max-width: 250px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.pokemon-card__title,
+.pokemon-card__section-title {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  border: none;
+}
+
+.add-reservation {
+  position: relative;
+  top: 80px;
+}
+
+.columns {
+  margin-top: -20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.column {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.pokemon-card h3 {
+  margin-top: -50px;
+  font-family: "Fugaz One", cursive;
+  font-size: 1.5rem;
+}
+
+.pokemon-card h2 {
+  font-family: "Press Start 2P", cursive;
+}
+
+.reservations-container {
+  margin-top: -40px;
+  height: 120px;
+  overflow-y: scroll;
+}
+
+.reservations-container p {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.7rem;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon-card__input {
+  max-width: 120px;
+  margin-bottom: 10px;
+}
+
+.pokemon-card__button {
+  max-width: 120px;
+}
+
+.popup-container {
+  position: fixed;
+  border-radius: 10rem 1rem 10rem 1rem;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  width: 60%;
+  height: auto;
+  background-color: rgba(48, 39, 39, 0.968);
+  text-align: center;
+  z-index: 2;
+}
+
+.background {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(5px);
+}
+
+.popup-header {
+  height: 70vh;
+  width: 100%;
+}
+
+.popup-header p {
+  margin-left: 1rem;
+  font-size: 1rem;
+  font-family: "Press Start 2P", cursive;
+  color: aliceblue;
+}
+
+#counterReserve {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.5rem;
+}
+
+.popup-header h2 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2rem;
+  color: rgb(195, 224, 249);
+  border: none;
+}
+
+.popup-header h3 {
+  font-family: "Fugaz One", cursive;
+  color: rgb(195, 224, 249);
+}
+
+.popup-container h2 {
+  text-align: center;
+}
+
+.popup-container img {
+  width: 20%;
+  margin-top: -30px;
+  max-width: 250px;
+  height: 250px;
+}
+
+.popup-container input,
+.popup-container textarea {
+  width: 100%;
+  border: none;
+  border-radius: 0.4rem;
+}
+
+.popup-container form {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.popup-container span {
+  position: absolute;
+  right: 0;
+  font-size: 4rem;
+}
+
+.cardPopup__form h2 {
+  font-family: "Press Start 2P", cursive;
+  color: aliceblue;
+  font-size: 1rem;
+  border: none;
+}
+
+.pokeGroup {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  gap: 2rem;
+  margin: 2rem;
+  padding: 2rem;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.z-index {
+  z-index: -1;
+}
+
+/* images styles */
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: stretch;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1.25rem;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.size {
+  width: 100px;
+  height: 100px;
+  padding: 0.25rem;
+  margin: 1rem 6rem;
+}
+
+.description {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+}
+
+.description p {
+  font-size: 0.8rem;
+  margin-top: 0;
+}
+
+.likes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fa-heart {
+  font-size: 1rem;
+  cursor: default;
+}
+
+.fa-heart:hover {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.count-likes {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Media query para pantallas de hasta 754px */
+@media (max-width: 754px) {
+  .popup-container {
+    width: 90%;
+    height: 95vh;
+    border-radius: 6rem 0 6rem 0;
+  }
+
+  .pokemon-card {
+    width: 50%;
+    min-width: 400px;
+  }
+
+  .reservations-container p {
+    font-size: 0.5rem;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .popup-header h2 {
+    font-size: 1.4rem;
+    color: rgb(195, 224, 249);
+    border: none;
+  }
+}
+
+.popup-skills {
+  margin-top: -1rem;
+}
+
+.popup-container .popup-skills {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup-skills li {
+  font-size: 1.1rem;
+}
+
+.popup-container .comments-list li {
+  margin-bottom: -10px;
+  padding: 0;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.7rem;
+  line-height: 0.7rem;
+}
+
+.popup-container .comments-list {
+  display: flex;
+  flex-direction: column;
+  height: 196px;
+  overflow-y: scroll;
+  background-color: rgba(81, 41, 41, 0.842);
+  padding: 36px;
+}
+
+.popup-container button {
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 0.4rem;
+}
+
+.popup-container h3,
+.popup-container p {
+  display: inline;
 }
