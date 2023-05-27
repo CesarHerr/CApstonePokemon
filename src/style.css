@@ -375,9 +375,10 @@ button:hover {
 .popup-container .comments-list {
   display: flex;
   flex-direction: column;
-  height: 120px;
+  height: 196px;
   overflow-y: scroll;
   background-color: rgba(81, 41, 41, 0.842);
+  padding: 36px;
 }
 
 .popup-container button {
